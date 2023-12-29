@@ -3,9 +3,9 @@ import Link from "next/link";
 import MainLayout from "@/components/Layout/MainLayout";
 
 const page = async () => {
-  let entirePosts = await fetch(process.env.ARTICLE_ALL, {}).then((res) =>
-    res.json()
-  );
+  let entirePosts = await fetch(process.env.ARTICLE_ALL, {
+    next: { revalidate: 10 },
+  }).then((res) => res.json());
   entirePosts = entirePosts.data;
 
   return (
