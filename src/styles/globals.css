@@ -8,3 +8,13 @@
   font-family: "Inter";
   src: url("./fonts/Inter.ttf");
 }
+
+@font-face {
+  font-family: "Monaco";
+  src: url("./fonts/Monaco.ttf");
+}
+
+@font-face {
+  font-family: "Neo";
+  src: url("./fonts/Neo.ttf");
+}

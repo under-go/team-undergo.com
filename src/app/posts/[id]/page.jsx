@@ -14,7 +14,9 @@ export const generateStaticParams = async () => {
 };
 
 const fetchPosts = async (params) => {
-  let response = await fetch(process.env.ARTICLE_ALL).then((res) => res.json());
+  const response = await fetch(process.env.ARTICLE_ALL, {
+    cache: "no-store",
+  }).then((res) => res.json());
 
   const post = response.data[params.id - 5];
   // 현재 api/v1/article/all의 data.id가 5부터 시작함에 따라 -5를 적용시켰음. 추후에 수정되면 삭제할 것.
@@ -32,8 +34,8 @@ const page = async ({ params }) => {
       <PC>
         <MainLayout>
           <div className="w-full flex justify-center">
-            <article className="prose">
-              <h1>{title}</h1>
+            <article className="prose dark:text-zinc-200">
+              <h1 className="dark:text-zinc-200">{title}</h1>
               <div className="flex justify-between">
                 <p>{author.nickname}</p>
                 <p>{createdAt.slice(0, 10)}</p>
