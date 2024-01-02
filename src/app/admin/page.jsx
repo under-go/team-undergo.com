@@ -1,23 +1,24 @@
-"use client";
+import { getServerSession } from "next-auth";
 
-import { useState } from "react";
+export default async function page() {
+  const email = (await getServerSession()).user.email;
 
-const Auth = (props) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(props.isLoggedIn);
-
-  if (isLoggedIn === true) {
-    return <div className="pt-24">hi</div>;
+  if (email === process.env.ADMIN_FIRST) {
+    return (
+      <div className="pt-24 flex justify-center text-center">
+        <div className="w-1/2">
+          <h1 className="tracking-widest text-3xl font-semibold dark:text-zinc-200">
+            ADMIN PAGE
+          </h1>
+          <div></div>
+        </div>
+      </div>
+    );
   } else {
-    return <div className="pt-24">no hi</div>;
+    return (
+      <h1 className="text-center pt-24 text-3xl tracking-widest">
+        Verfiy Failed...
+      </h1>
+    );
   }
-};
-
-const page = () => {
-  return (
-    <div className="pt-24">
-      <input type="password" className="border border-black" />
-    </div>
-  );
-};
-
-export default page;
+}

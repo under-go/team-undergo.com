@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import TypingAnimation from "@/components/TypingAnimation/TypingAnimation";
+
 const page = async () => {
   let entirePosts = await fetch(process.env.ARTICLE_ALL, {
     cache: "no-store",
@@ -7,8 +9,14 @@ const page = async () => {
   entirePosts = entirePosts.data;
 
   return (
-    <div className="pt-24 w-full flex justify-center dark:text-zinc-200 transition-colors duration-300">
+    <div className="pt-16 w-full flex justify-center dark:text-zinc-200 transition-colors duration-300">
       <div className="w-1/3">
+        <div className="flex flex-col gap-4 text-5xl font-extrabold my-12">
+          <p>WE</p>
+          <p>ARE</p>
+          <TypingAnimation />
+        </div>
+        <hr className="mb-8 dark:border-zinc-500 transition-colors duration-300" />
         {entirePosts.reverse().map((post) => {
           return (
             <div key={post.id}>

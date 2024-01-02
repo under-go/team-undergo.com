@@ -3,6 +3,7 @@ import Link from "next/link";
 import Mobile from "@/modules/DeviceDisplayOptions/Mobile";
 import PC from "@/modules/DeviceDisplayOptions/PC";
 import Darkmode from "./Darkmode/Darkmode";
+import AuthorizationBtn from "./AuthorizationBtn/AuthorizationBtn";
 
 export default function NavBar() {
   return (
@@ -19,11 +20,9 @@ export default function NavBar() {
               <div className="flex items-center text-lg dark:text-zinc-200 transition-colors duration-300">
                 <Darkmode />
               </div>
-              <Link href="about-us">
-                <p className="bg-gray-800 text-white py-1 px-3 rounded-full dark:bg-zinc-200 dark:text-black transition-colors duration-300">
-                  About Us
-                </p>
-              </Link>
+              <div className="bg-gray-800 text-white py-1 px-3 rounded-full dark:bg-zinc-200 dark:text-black transition-colors duration-300">
+                <AuthorizationBtn />
+              </div>
             </div>
           </div>
         </div>
