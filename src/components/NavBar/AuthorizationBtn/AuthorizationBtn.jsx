@@ -12,7 +12,7 @@ export default function AuthorizationBtn() {
         <button onClick={() => signOut("google")}>Sign Out</button>
       ) : (
         <button onClick={() => signIn("google")} className="flex items-center">
-          Sign In With <FaGoogle className="ml-2" />
+          Sign In With <FaGoogle className="ml-1" />
         </button>
       )}
     </div>

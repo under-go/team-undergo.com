@@ -43,6 +43,15 @@ const page = async ({ params }) => {
               <p>{content}</p>
               <p>{content}</p>
               <p>{content}</p>
+              <script
+                src="https://utteranc.es/client.js"
+                repo="under-go/team-undergo.com"
+                issue-term="pathname"
+                label="Comment"
+                theme="github-light"
+                crossorigin="anonymous"
+                async
+              ></script>
             </article>
           </div>
         </MainLayout>
